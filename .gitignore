@@ -19,5 +19,5 @@ compile_commands.json
 *.a
 *.lib
 *.pdb
-crashes/
-crashes-more/
+/crashes/
+/crashes-more/
