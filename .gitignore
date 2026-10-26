@@ -1,0 +1,23 @@
+# build artifacts
+build/
+cmake-build-*/
+out/
+CMakeCache.txt
+CMakeFiles/
+compile_commands.json
+
+# IDE / editor
+.vs/
+.vscode/
+.idea/
+*.user
+
+# binaries and fuzzing output (committed examples live in results/)
+*.o
+*.obj
+*.exe
+*.a
+*.lib
+*.pdb
+crashes/
+crashes-more/

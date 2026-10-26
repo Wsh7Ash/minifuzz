@@ -1,0 +1,17 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+      - name: Build
+        run: cmake --build build -j
+      - name: Test (unit + find + replay)
+        run: ctest --test-dir build --output-on-failure
+      - name: Deterministic demo run
+        run: |
+          ./build/minifuzz --seed 20261026 --iterations 200000 --crashes-dir /tmp/crashes || test $? -eq 1
+          ./build/minifuzz --replay /tmp/crashes/*.bin || test $? -eq 1

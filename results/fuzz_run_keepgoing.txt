@@ -1,0 +1,9 @@
+using 4 built-in seed input(s)
+seed=7 iterations=500000 max_input=4096 target=svcf-parser
+executed 500000 input(s) in 6.34461s (78807/s), crashes=114 unique_bugs=2
+saved results/crashes_more/svcf-key-off-by-one-d74b3ac29139efc3.bin
+  svcf-key-off-by-one: WRITE of 33 byte(s) into a 32-byte buffer; redzone byte 0 overwritten
+  replay: minifuzz --replay results/crashes_more/svcf-key-off-by-one-d74b3ac29139efc3.bin
+saved results/crashes_more/svcf-value-off-by-one-ee06c1e8b7930916.bin
+  svcf-value-off-by-one: WRITE of 65 byte(s) into a 64-byte buffer; redzone byte 0 overwritten
+  replay: minifuzz --replay results/crashes_more/svcf-value-off-by-one-ee06c1e8b7930916.bin
